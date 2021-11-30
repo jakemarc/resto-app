@@ -12,6 +12,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
+
 import { login } from "../components/auth";
 import AppContext from "../components/context";
 
@@ -93,13 +94,14 @@ function Login(props) {
                             appContext.setUser(res.data.user);
                           })
                           .catch((error) => {
-                            //setError(error.response.data);
+                            // setError(error.response.data);
                             setLoading(false);
                           });
                       }}
                     >
                       {loading ? "Loading... " : "Submit"}
                     </Button>
+                    
                   </FormGroup>
                 </fieldset>
               </Form>

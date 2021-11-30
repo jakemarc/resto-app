@@ -23,6 +23,7 @@ const {user} = useContext(AppContext);
         />
         <script src="https://js.stripe.com/v3" />
       </Head>
+
       <header>
         <style jsx>
           {`
@@ -35,6 +36,7 @@ const {user} = useContext(AppContext);
             }
           `}
         </style>
+
         <Nav className="navbar navbar-dark bg-dark">
           <NavItem>
             <Link href="/">
@@ -43,7 +45,7 @@ const {user} = useContext(AppContext);
           </NavItem>
           <NavItem className="ml-auto">
             {user ? (
-              <h5>{user.username}</h5>
+              <h5>{user}</h5>
             ) : (
               <Link href="/register">
                 <a className="nav-link"> Sign up</a>
@@ -71,6 +73,7 @@ const {user} = useContext(AppContext);
           </NavItem>
         </Nav>
       </header>
+      
       <Container>{props.children}</Container>
     </div>
   );

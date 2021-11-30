@@ -15,6 +15,7 @@ function MyApp(props){
   setUser = (user) => {
     setState({ user });
   };
+  
   addItem = (item) => {
     let { items } = state.cart;
     //check for item already in cart
@@ -58,6 +59,7 @@ function MyApp(props){
     console.log(`state reset to cart:${JSON.stringify(state)}`)
      
   };
+  
   removeItem = (item) => {
     let { items } = state.cart;
     //check for item already in cart
