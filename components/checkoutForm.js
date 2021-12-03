@@ -6,6 +6,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CardSection from "./cardSection";
 import AppContext from "./context";
 import Cookies from "js-cookie";
+import router from "next/router";
 
 function CheckoutForm() {
   const [data, setData] = useState({
@@ -52,9 +53,31 @@ function CheckoutForm() {
       }),
     });
 
-    if (!response.ok) {
+    if (response.ok) {
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            Payment Confirmed
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      alert("Payment Confirmed")
+      router.push("/");
+    } else {
       setError(response.statusText);
-      console.log("SUCCESS")
+      console.log("ERROR")
     }
 
     // OTHER stripe methods you can use depending on app

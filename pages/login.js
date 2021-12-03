@@ -2,17 +2,7 @@
 
 import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-} from "reactstrap";
-
+import { Container, Row, Col, Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { login } from "../components/auth";
 import AppContext from "../components/context";
 
@@ -39,7 +29,7 @@ function Login(props) {
         <Col sm="12" md={{ size: 5, offset: 3 }}>
           <div className="paper">
             <div className="header">
-              <img src="http://localhost:1337/uploads/5a60a9d26a764e7cba1099d8b157b5e9.png" />
+             <h5>Login</h5>
             </div>
             <section className="wrapper">
               {Object.entries(error).length !== 0 &&
@@ -92,6 +82,7 @@ function Login(props) {
                             setLoading(false);
                             // set authed User in global context to update header/app state
                             appContext.setUser(res.data.user);
+                            console.log(res.data.user)
                           })
                           .catch((error) => {
                             // setError(error.response.data);

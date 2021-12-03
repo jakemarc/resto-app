@@ -12,8 +12,7 @@ function Home() {
     const link = new HttpLink({ uri: `${API_URL}/graphql`})
     const cache = new InMemoryCache()
     const client = new ApolloClient({link,cache});
- 
-  
+    
     return (
         <ApolloProvider client={client}>
           <div className="search">

@@ -97,7 +97,7 @@ const Register = () => {
                         registerUser(data.username, data.email, data.password)
                           .then((res) => {
                             // set authed user in global context object
-                            appContext.setUser(res.data.user);
+                            appContext.setUser(res.data.username);
                             setLoading(false);
                             console.log(`registered user: ${JSON.stringify(res.data)}`)
                           })

@@ -12,6 +12,7 @@ function Cart() {
   //cart = value.cart;
   //console.log('props:'+ JSON.stringify(value));
   console.log(`in CART: ${JSON.stringify(cart)}`)
+ 
   
   //   problem is that cart may not be set
   const router = useRouter();
